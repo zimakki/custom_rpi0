@@ -1,8 +1,8 @@
-defmodule NervesSystemRpi0.MixProject do
+defmodule CustomRpi0.MixProject do
   use Mix.Project
 
-  @github_organization "nerves-project"
-  @app :nerves_system_rpi0
+  @github_organization "zimakki"
+  @app :custom_rpi0
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -67,7 +67,8 @@ defmodule NervesSystemRpi0.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.11", runtime: false},
+      # {:nerves, "~> 1.11", runtime: false},
+      {:nerves, github: "nerves-project/nerves", override: true, runtime: false},
       {:nerves_system_br, "1.28.1", runtime: false},
       {:nerves_toolchain_armv6_nerves_linux_gnueabihf, "~> 13.2.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
